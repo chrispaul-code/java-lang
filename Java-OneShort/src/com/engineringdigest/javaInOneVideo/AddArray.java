@@ -6,23 +6,45 @@ public class AddArray {
     public static void main(String[] args) {
         int[] num={2,7,4};
         int k =181;
-        int count=0;
-        int pow=0;
-        ArrayList<Integer> numb = new ArrayList<>();
 
-        for (int i = num.length - 1; i >= 0; i--) {
-            count += num[i] * (int)Math.pow(10, pow);
-            pow++;
+        int p=num.length-1;
+
+        List<Integer> ans = new ArrayList<>();
+
+        int carry=0;
+
+        while(p>=0||k>0){
+
+
+            int numval=0;
+
+            if(p>=0){
+                numval=num[p];
+            }
+
+            int d=k%10;
+
+            int sum=numval+d+carry;
+
+            int digit=sum%10;
+
+            carry=sum/10;
+
+            ans.add(digit);
+
+            p--;
+            k=k/10;
+
         }
 
-        int result=count+k;
-
-        while(result>0){
-            numb.add(result%10);
-            result=result/10;
+        if(carry>0){
+            ans.add(carry);
         }
-        Collections.reverse(numb);
-        System.out.println(numb);
+
+        Collections.reverse(ans);
+
+        System.out.println(ans);
+
 
     }
 }
