@@ -12,5 +12,6 @@ public class LikedList {
         linkedList.add(15);
         linkedList.add(16);
         System.out.println(linkedList);
+
     }
 }
