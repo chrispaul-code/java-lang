@@ -9,7 +9,7 @@ public class AddArray {
 
         int p=num.length-1;
 
-        List<Integer> ans = new ArrayList<>();
+        List<Integer> ans = new ArrayList<>(23);
 
         int carry=0;
 
